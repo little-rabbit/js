@@ -183,7 +183,7 @@
     for(let i=0;i<menu.length;i++){
         menu.eq(i).click(function(){
             // $('article').html(data[i].article)
-            // $('.title').html(menu.eq(i).html())
+            $('.title').html(menu.eq(i).html())
             $('.article li').eq(i).css('display','block')
             $('.article li').eq(i).siblings().css('display','none')
         })
