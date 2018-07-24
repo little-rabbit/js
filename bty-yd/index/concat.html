@@ -165,21 +165,21 @@
 	</div>
 </body>
 <script>
-    var data=[
-        {article:`
+    // var data=[
+    //     {article:`
             
-        `},
-        {article:` 
+    //     `},
+    //     {article:` 
             
-        `},
-        {article:`
+    //     `},
+    //     {article:`
         
-        `},
-        {article:`
+    //     `},
+    //     {article:`
            
-        `}
-    ];
-    var menu=$('.menu');
+    //     `}
+    // ];
+    var menu=$('.menu');   
     for(let i=0;i<menu.length;i++){
         menu.eq(i).click(function(){
             // $('article').html(data[i].article)
@@ -207,7 +207,11 @@
 		} 
          // 地图api
         var map = new BMap.Map("allmap");
-	  var point = new BMap.Point(116.404, 39.915);
+        map.addEventListener("dragend", function(){    
+         var center = map.getCenter();    
+         alert("地图中心点变更为：" + center.lng + ", " + center.lat);    
+        });
+	  var point = new BMap.Point(116.315463, 39.990388);
 	  map.centerAndZoom(point, 15);
   	  var marker = new BMap.Marker(point);  // 创建标注
 	  map.addOverlay(marker);               // 将标注添加到地图中
